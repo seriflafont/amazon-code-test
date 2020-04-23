@@ -22,4 +22,9 @@ describe('paintBucket - basic functionality', ()=>{
         const actual = paintBucket([[0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0],[0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0],[0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0],[0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0],[0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0]],1,[0,27]);
         expect(actual).to.deep.equal(expected);
     });
+    it('returns the same output if anything other than 1 or 0 is sent as color',()=>{
+        const expected = [[0, 1, 0],[0, 0, 1],[0, 1, 1]];
+        const actual = paintBucket([[0, 1, 0],[0, 0, 1],[0, 1, 1]],2,[0,0]);
+        expect(actual).to.deep.equal(expected);
+    });
 });

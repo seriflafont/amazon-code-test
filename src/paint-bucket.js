@@ -8,8 +8,8 @@
 
 export const paintBucket = (canvasArray, color, coordinates) => {
     let cellx = coordinates[0], celly = coordinates[1];
+    if(color > 1) return canvasArray; //because we know it can only be 1 or 0.
     if(canvasArray[cellx][celly] === color) return canvasArray;
-    
     let list = [coordinates];
     let counter = 0;
     while(list.length > 0){

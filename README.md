@@ -19,7 +19,8 @@ The output would be:
 [1, 1, 1]]
 
 To test:
-1. npm run test
+1. npm install
+2. npm run test
 
 
 [[0, 1, 1, 1, 0, 0, 0],

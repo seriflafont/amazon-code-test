@@ -7,14 +7,13 @@
 //[0, 1, 1]]
 
 export const paintBucket = (canvasArray, color, coordinates) => {
-    let cellx = coordinates[0], celly = coordinates[1];
+    let [cellx, celly] = coordinates;
     if(color > 1) return canvasArray; //because we know it can only be 1 or 0.
     if(canvasArray[cellx][celly] === color) return canvasArray;
     let list = [coordinates];
-    let counter = 0;
     while(list.length > 0){
-        let row = list[counter][0];
-        let col = list[counter][1];
+        let row = list[0][0]; // because we're removing the one we tested from the array each time, this will always be the first coordinates
+        let col = list[0][1];
         if(canvasArray[row][col] !== color){
             canvasArray[row][col] = color;
             if(row > 0) list.push([row-1,col]); //above cell
